@@ -1,0 +1,74 @@
+<div class="container-fluid fade-in">
+    <div class="row mb-4">
+        <div class="col-12">
+            <h1 class="h3 mb-0">Dashboard Overview</h1>
+            <p class="text-muted">Welcome back! Let's work together to make the world better.</p>
+        </div>
+    </div>
+
+    <div class="row g-3 mb-4">
+        <div class="col-12 col-md-6 col-lg-4" *ngFor="let metric of metrics">
+            <app-metric-card [metric]="metric"></app-metric-card>
+        </div>
+    </div>
+
+    <div class="row g-3 mb-4">
+        <div class="col-12 col-lg-8">
+            <app-data-chart></app-data-chart>
+        </div>
+        <div class="col-12 col-lg-4">
+            <div class="card dashboard-card h-100 fade-in-up">
+                <div class="card-body">
+                    <h5 class="card-title mb-3">Quick Actions</h5>
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-primary" routerLink="/reports">
+                            <i class="bi bi-file-earmark-text me-2"></i> Generate Report
+                        </button>
+                        <!-- <button class="btn btn-outline-secondary">
+                            <i class="bi bi-download me-2"></i> Download Data
+                        </button>
+                        <button class="btn btn-outline-secondary">
+                            <i class="bi bi-envelope me-2"></i> Send Summary
+                        </button> -->
+                    </div>
+
+                    <div class="mt-4">
+                        <h6 class="mb-3">System Status</h6>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Server Load</span>
+                            <span class="badge bg-success">Normal</span>
+                        </div>
+                        <div class="progress mb-3" style="height: 6px;">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 28%;"
+                                aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Database</span>
+                            <span class="badge bg-success">Healthy</span>
+                        </div>
+                        <div class="progress mb-3" style="height: 6px;">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 35%;"
+                                aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Memory Usage</span>
+                            <span class="badge bg-warning">Moderate</span>
+                        </div>
+                        <div class="progress" style="height: 6px;">
+                            <div class="progress-bar bg-warning" role="progressbar" style="width: 65%;"
+                                aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <app-transactions-table></app-transactions-table>
+        </div>
+    </div>
+</div>
